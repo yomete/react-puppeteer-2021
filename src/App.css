@@ -28,6 +28,48 @@
   color: #61dafb;
 }
 
+.form-wrapper {
+  width: 500px;
+  margin: 4rem auto 0;
+  box-shadow: 0 15px 35px 0 rgb(60 66 87 / 8%), 0 5px 15px 0 rgb(0 0 0 / 12%);
+  padding: 2rem 3rem 6rem;
+  border-radius: 4px;
+}
+
+.form-header {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  color: #3c4257;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 404px;
+  margin: 0 auto;
+}
+
+.form-input {
+  height: 44px;
+  padding: 0 16px;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.form-submit-button {
+  background-color: #635bff;
+  font-size: 1rem;
+  border: 0;
+  height: 44px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
