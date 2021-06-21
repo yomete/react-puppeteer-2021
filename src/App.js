@@ -4,6 +4,7 @@ import "./App.css";
 
 function App() {
   const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+  const [error, setError] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -14,6 +15,11 @@ function App() {
       setIsUserLoggedIn(true);
     } else {
       setIsUserLoggedIn(false);
+      setError(true);
+
+      setTimeout(() => {
+        setError(false);
+      }, 4000);
     }
   };
 
@@ -24,6 +30,12 @@ function App() {
 
         {!isUserLoggedIn && (
           <form className="form" onSubmit={login}>
+            {error && (
+              <p className="form-error-text">
+                Please enter a correct username/password.
+              </p>
+            )}
+
             <input
               type="email"
               required
@@ -42,13 +54,16 @@ function App() {
                 setPassword(e.target.value);
               }}
             />
+
             <button type="submit" className="form-submit-button">
               Submit
             </button>
           </form>
         )}
 
-        {isUserLoggedIn && <p className="form-success-message">You are now signed in.</p>}
+        {isUserLoggedIn && (
+          <p className="form-success-message">You are now signed in.</p>
+        )}
       </div>
     </div>
   );
