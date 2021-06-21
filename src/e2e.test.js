@@ -1,16 +1,6 @@
-import puppeteer from "puppeteer";
-
 describe("App.js", () => {
-  let browser;
-  let page;
-
-  beforeAll(async () => {
-    browser = await puppeteer.launch();
-    page = await browser.newPage();
-  });
-
   it("shows a success message after submitting a form", async () => {
-    await page.goto("http://localhost:5000");
+    await page.goto("http://localhost:3000");
     await page.waitForSelector(".form-header");
 
     await page.click(".form-input__email");
@@ -29,6 +19,4 @@ describe("App.js", () => {
 
     expect(text).toContain("You are now signed in.");
   });
-
-  afterAll(() => browser.close());
 });
