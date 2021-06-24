@@ -44,6 +44,7 @@ function App() {
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
+              name="emailAddress"
             />
             <input
               type="password"
@@ -53,6 +54,7 @@ function App() {
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
+              name="password"
             />
 
             <button type="submit" className="form-submit-button">
